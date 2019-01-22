@@ -1,19 +1,24 @@
-const inorderTraversal = function(root) {
-  const output = [];
-  const traverse = (node) => {
-      if (!node) {
-          return;
-      }
-      if (node.left) {
-          traverse(node.left)
-      }
-      
-      output.push(node.val)
-      
-      if (node.right) {
-          traverse(node.right)
-      }
-  }
-  traverse(root);
-  return output;
+var inorderTraversal = function(root) {
+    if (!root) {
+        return [];
+    }
+    let vals = [];
+    const traverse = (node) => {  
+        if (node.left) {
+            traverse(node.left);
+        }
+        
+        vals.push(node.val);
+        
+        if (node.right) {
+            traverse(node.right);
+        }
+        
+        
+        if (!node.left && !node.right) {
+            return;
+        }
+    }
+    traverse(root)
+    return vals;
 };
