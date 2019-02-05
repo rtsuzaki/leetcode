@@ -1,9 +1,10 @@
 var deleteNode = function(node) {
-    let current = node;
-     while (current.next) {
-         var prev = current;
-         current.val = current.next.val
-         current = current.next
-     }
-     prev.next = null
- };
+    let curr = node;
+    let prev;
+    while (curr && curr.next) {
+        curr.val = curr.next.val;
+        prev = curr;
+        curr = curr.next;
+    }
+    prev.next = null;
+};
