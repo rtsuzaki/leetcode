@@ -1,11 +1,13 @@
 var reverseWords = function(s) {
     let words = s.split(' ');
-    let output = '';
-    words.forEach((word) => {
-        for (let i = word.length - 1; i >= 0; i--) {
-            output += word[i]
+    let outputWords = [];
+    for (let i = 0; i < words.length; i++) {
+        let word = ''
+        for (let j = words[i].length -1; j >= 0; j--) {
+            word += words[i][j]
         }
-        output += ' ';
-    })
-    return output.slice(0, output.length-1)
+        outputWords.push(word);
+    }
+    
+    return outputWords.join(' ')
 };
